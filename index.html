@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela A. Meléndez | Especialista en Facturación Médica & Codificación Clínica</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rose: {
+                            50: '#fdf2f4',
+                            100: '#fbe5e9',
+                            200: '#f7ced7',
+                            300: '#f2a7b8',
+                            400: '#ea7893',
+                            500: '#df4d72',
+                            600: '#c82e56',
+                            700: '#a82144',
+                        },
+                        rosegold: {
+                            light: '#f7e7e8',
+                            DEFAULT: '#cfa29d',
+                            dark: '#aa7a74',
+                        },
+                        navy: {
+                            800: '#1b2535',
+                            900: '#0f172a',
+                        },
+                        blush: '#fff8f8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-rose-gold {
+            background: linear-gradient(135deg, #f7ceb2 0%, #cfa29d 50%, #b8738d 100%);
+        }
+        .text-gradient-rose {
+            background: linear-gradient(135deg, #9f445c 0%, #cfa29d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(207, 162, 157, 0.25);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-blush text-slate-800 font-sans antialiased selection:bg-rose-200 selection:text-rose-900">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-rose-100/60 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full gradient-rose-gold flex items-center justify-center text-white font-serif font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+                        DM
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-tight text-navy-900 block leading-none">Daniela A. Meléndez</span>
+                        <span class="text-xs text-rose-500 tracking-wider uppercase font-medium">Facturación & Codificación Clínica</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#perfil" class="text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors">Perfil</a>
+                    <a href="#competencias" class="text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors">Competencias</a>
+                    <a href="#proyectos" class="text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors">Casos de Estudio</a>
+                    <a href="#auditoria-tool" class="text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors">Simulador RCM</a>
+                    <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-navy-800 text-white text-sm font-medium hover:bg-rose-600 transition-all shadow-sm hover:shadow-rose-200">
+                        <i class="fa-regular fa-envelope">text-xs</i> Contactar
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-rose-600 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-rose-100 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#perfil" class="block py-2 text-slate-700 hover:text-rose-600 font-medium border-b border-slate-50">Perfil</a>
+            <a href="#competencias" class="block py-2 text-slate-700 hover:text-rose-600 font-medium border-b border-slate-50">Competencias</a>
+            <a href="#proyectos" class="block py-2 text-slate-700 hover:text-rose-600 font-medium border-b border-slate-50">Casos de Estudio</a>
+            <a href="#auditoria-tool" class="block py-2 text-slate-700 hover:text-rose-600 font-medium border-b border-slate-50">Simulador RCM</a>
+            <a href="#contacto" class="block text-center py-2.5 mt-2 rounded-full bg-rose-600 text-white font-medium">Contactar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section / Perfil Profesional -->
+    <section id="perfil" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-1/4 -right-20 w-96 h-96 bg-rose-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 -left-20 w-80 h-80 bg-rosegold-light/60 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-800 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-graduation-cap"></i> Graduando con Excelencia Académica
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight">
+                        Optimizando la Integridad Financiera y <span class="text-gradient-rose">Precisión Clínica</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Soy <strong class="text-navy-800">Daniela A. Meléndez</strong>, profesional emergente en Facturación Médica y Codificación Clínica. Especializada en la gestión eficiente del Ciclo de Ingresos Médicos (RCM), auditoría rigurosa de reclamaciones CMS-1500/UB-04 y maximización del reembolso bajo regulaciones HIPAA y CMS.
+                    </p>
+
+                    <!-- Core Credential Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-2.5">
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white border border-rose-200/80 shadow-xs text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved text-rose-500"></i> Cumplimiento HIPAA
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white border border-rose-200/80 shadow-xs text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-barcode text-rose-500"></i> ICD-10-CM / PCS
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white border border-rose-200/80 shadow-xs text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-notes-medical text-rose-500"></i> CPT & HCPCS Level II
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-white border border-rose-200/80 shadow-xs text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-desktop text-rose-500"></i> Software EHR / EMR
+                        </span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contacto" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-medium hover:opacity-95 transition-all shadow-md hover:shadow-lg shadow-rose-200 text-center">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Solicitar Entrevista
+                        </a>
+                        <button onclick="downloadResumeSimulated()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-rosegold/60 text-navy-800 font-medium hover:bg-rose-50 transition-all shadow-xs text-center">
+                            <i class="fa-solid fa-file-arrow-down mr-2 text-rose-500"></i> Descargar Resumen (PDF)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame Layer -->
+                        <div class="absolute -inset-2 rounded-3xl gradient-rose-gold opacity-30 blur-lg"></div>
+                        
+                        <div class="relative glass-card rounded-3xl p-8 shadow-xl border border-white">
+                            <div class="flex items-center gap-4 mb-6 pb-6 border-b border-rose-100">
+                                <div class="w-16 h-16 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600 text-2xl font-bold shadow-inner">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-navy-900">Daniela A. Meléndez</h3>
+                                    <p class="text-sm text-rose-600 font-medium">Especialista RCM & Codificación</p>
+                                    <p class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1"></i> Puerto Rico / Remoto</p>
+                                </div>
+                            </div>
+
+                            <!-- Executive Key Highlights -->
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs mt-0.5">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-slate-800">Reducción de Denegaciones</h4>
+                                        <p class="text-xs text-slate-500">Enfoque proactivo en scrubbing de reclamaciones previo al envío para asegurar pago limpio.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs mt-0.5">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-slate-800">Dominio de Normativas</h4>
+                                        <p class="text-xs text-slate-500">Amplio conocimiento de directrices Medicare, Medicaid, Planes Privados y Ley HITECH.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs mt-0.5">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-slate-800">Manejo de Modificadores</h4>
+                                        <p class="text-xs text-slate-500">Asignación precisa de modificadores CPT/HCPCS para justificar necesidad médica.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Status Box -->
+                            <div class="mt-6 p-3.5 rounded-xl bg-slate-900 text-white flex items-center justify-between text-xs">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Disponible para contratación
+                                </span>
+                                <span class="text-rose-300 font-semibold">Tiempo Completo / Híbrido</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Competencias Técnicas & Habilidades -->
+    <section id="competencias" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-rose-600 font-semibold text-sm tracking-widest uppercase">Áreas de Dominio</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Competencias Técnicas y Especializadas</h2>
+                <div class="w-16 h-1 bg-rosegold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10" id="skill-filters">
+                <button onclick="filterSkills('all')" class="skill-btn active px-5 py-2 rounded-full text-sm font-medium transition-all bg-navy-800 text-white shadow-sm">
+                    Todas
+                </button>
+                <button onclick="filterSkills('coding')" class="skill-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-rose-50 text-slate-600 hover:bg-rose-100">
+                    Codificación Médica
+                </button>
+                <button onclick="filterSkills('software')" class="skill-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-rose-50 text-slate-600 hover:bg-rose-100">
+                    Software & EHR
+                </button>
+                <button onclick="filterSkills('compliance')" class="skill-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-rose-50 text-slate-600 hover:bg-rose-100">
+                    Cumplimiento & Leyes
+                </button>
+                <button onclick="filterSkills('billing')" class="skill-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-rose-50 text-slate-600 hover:bg-rose-100">
+                    Facturación & Denegaciones
+                </button>
+            </div>
+
+            <!-- Skills Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="skills-grid">
+                
+                <!-- Card 1: Codificación -->
+                <div class="skill-card coding rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">ICD-10-CM / PCS</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Manejo fluido para diagnósticos clínicos y procedimientos hospitalarios con alta precisión diagnóstica.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2: CPT & HCPCS -->
+                <div class="skill-card coding rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-book-medical"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">CPT & HCPCS II</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Codificación de procedimientos médicos, evaluación y manejo (E/M), servicios ambulatorios y suministros.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Software -->
+                <div class="skill-card software rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-laptop-medical"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Plataformas EHR / EMR</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Experiencia práctica en Kareo, MediSoft, Epic y Cerner para la entrada e ingreso de cargos médicos.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Formulario CMS -->
+                <div class="skill-card billing rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">CMS-1500 & UB-04</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Preparación, depuración y transmisión electrónica de formularios estándar de facturación médica.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 5: HIPAA -->
+                <div class="skill-card compliance rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-user-lock"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Cumplimiento HIPAA / HITECH</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Protección estricta de la PHI (Información de Salud Protegida) y estándares de seguridad de datos.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 98%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Denegaciones -->
+                <div class="skill-card billing rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Gestión de Apelaciones</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Investigación de códigos de denegación (CARC/RARC) y redacción de cartas de apelación efectiva.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 89%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Regulaciones CMS -->
+                <div class="skill-card compliance rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Medicare & Medicaid</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Conocimiento técnico sobre regulaciones de pagadores gubernamentales y planes privados locales/comerciales.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 91%"></div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Modificadores -->
+                <div class="skill-card coding rounded-2xl p-6 bg-blush border border-rose-100 hover:border-rose-300 transition-all hover:-translate-y-1 shadow-xs hover:shadow-md">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Uso de Modificadores</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Aplicación precisa de modificadores (25, 59, RT/LT, XE/XS) para evitar rechazos o duplicaciones.</p>
+                    <div class="w-full bg-rose-200/50 rounded-full h-1.5">
+                        <div class="bg-rose-500 h-1.5 rounded-full" style="width: 93%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Proyectos Destacados y Casos de Estudio -->
+    <section id="proyectos" class="py-20 bg-blush relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-rose-600 font-semibold text-sm tracking-widest uppercase">Práctica Aplicada</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Casos de Estudio & Proyectos Académicos</h2>
+                <div class="w-16 h-1 bg-rosegold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-rose-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                            01
+                        </div>
+                        <span class="text-xs font-semibold text-rose-500 tracking-wider uppercase">Auditoría RCM</span>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Optimización de Denegaciones en Reclamaciones CMS-1500</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Análisis exhaustivo de un lote simulado de 150 reclamaciones con una tasa de denegación inicial del 18%. Identificación de fallas recurrentes por falta de modificador 25 e incompatibilidad de códigos ICD-10.
+                        </p>
+                    </div>
+                    <button onclick="openModal('project1')" class="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-navy-900 group-hover:text-rose-600 transition-colors">
+                        <span>VER DETALLES DEL PROYECTO</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-rose-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                            02
+                        </div>
+                        <span class="text-xs font-semibold text-rose-500 tracking-wider uppercase">Cumplimiento Legal</span>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Protocolo de Verificación Previa & Privacidad HIPAA</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Diseño de una guía estandarizada para la elegibilidad y autorización previa de pacientes, reduciendo rechazos por elegibilidad y asegurando el manejo ético de la PHI en recepción y cobros.
+                        </p>
+                    </div>
+                    <button onclick="openModal('project2')" class="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-navy-900 group-hover:text-rose-600 transition-colors">
+                        <span>VER DETALLES DEL PROYECTO</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-rose-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl font-bold mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                            03
+                        </div>
+                        <span class="text-xs font-semibold text-rose-500 tracking-wider uppercase">Simulación Práctica</span>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Proyecto Integrador: Ciclo Completo de Reembolso</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Simulación end-to-end desde el registro del paciente, codificación de encuentro ambulatorio, posteo de pagos (ERA/EOB) y conciliación final de balances con pacientes.
+                        </p>
+                    </div>
+                    <button onclick="openModal('project3')" class="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-navy-900 group-hover:text-rose-600 transition-colors">
+                        <span>VER DETALLES DEL PROYECTO</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Claims Audit Tool Widget -->
+    <section id="auditoria-tool" class="py-20 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background Glow -->
+                <div class="absolute top-0 right-0 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-semibold uppercase tracking-wider mb-2">Herramienta Interactiva</span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold">Simulador de Auditoría de Reclamaciones</h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Pruebe las habilidades de auditoría de Daniela. Seleccione un caso para verificar errores antes de enviar la factura.</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-rose-400 font-mono">CMS-1500 Scrubbing v2.4</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Test Cases -->
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Case Selection & Details Left -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider block">Seleccione Caso Práctico:</label>
+                        
+                        <div onclick="selectAuditCase(1)" id="case-btn-1" class="audit-case-card cursor-pointer p-4 rounded-xl border border-rose-500/40 bg-slate-800/80 hover:bg-slate-800 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold text-sm text-rose-300">Caso #101: Visita E/M + Procedimiento</span>
+                                <span class="text-xs px-2 py-0.5 rounded bg-rose-900/50 text-rose-200">Ambulatorio</span>
+                            </div>
+                            <p class="text-xs text-slate-400">CPT 99214 + CPT 17000 en la misma fecha.</p>
+                        </div>
+
+                        <div onclick="selectAuditCase(2)" id="case-btn-2" class="audit-case-card cursor-pointer p-4 rounded-xl border border-slate-700 bg-slate-800/30 hover:bg-slate-800/80 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold text-sm text-slate-200">Caso #102: Falta de Especificidad ICD-10</span>
+                                <span class="text-xs px-2 py-0.5 rounded bg-slate-700 text-slate-300">Ortopedia</span>
+                            </div>
+                            <p class="text-xs text-slate-400">Diagnóstico E11.9 vs Novedades sin lateralidad.</p>
+                        </div>
+
+                        <div onclick="selectAuditCase(3)" id="case-btn-3" class="audit-case-card cursor-pointer p-4 rounded-xl border border-slate-700 bg-slate-800/30 hover:bg-slate-800/80 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-bold text-sm text-slate-200">Caso #103: Pre-Autorización Ausente</span>
+                                <span class="text-xs px-2 py-0.5 rounded bg-slate-700 text-slate-300">Estudio RMN</span>
+                            </div>
+                            <p class="text-xs text-slate-400">CPT 72148 con diagnóstico M54.5 sin Auth Number.</p>
+                        </div>
+                    </div>
+
+                    <!-- Audit Display & Result Right -->
+                    <div class="lg:col-span-7 bg-slate-950 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800 text-xs font-mono text-slate-400">
+                                <span>RECLAMACIÓN: <span id="display-claim-id" class="text-white">CLM-2026-101</span></span>
+                                <span>PAGADOR: <span id="display-payer" class="text-white">Triple-S / MCS / Medicare</span></span>
+                            </div>
+
+                            <div class="mt-4 space-y-3">
+                                <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono">
+                                    <span class="text-rose-400">Código ICD-10:</span> <span id="display-icd" class="text-slate-200">M54.50 (Lumbago no especificado)</span>
+                                </div>
+                                <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono">
+                                    <span class="text-rose-400">Código CPT/HCPCS:</span> <span id="display-cpt" class="text-slate-200">99214 + 17000</span>
+                                </div>
+                                <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono">
+                                    <span class="text-rose-400">Modificadores Adjuntos:</span> <span id="display-mod" class="text-amber-400">Ninguno (Faltante)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button & Output -->
+                        <div class="mt-6">
+                            <button onclick="runAudit()" class="w-full py-3 rounded-xl bg-gradient-to-r from-rose-600 to-rose-500 text-white font-bold text-sm hover:opacity-95 transition-all shadow-lg shadow-rose-900/40">
+                                <i class="fa-solid fa-magnifying-glass font-normal mr-2"></i> Ejecutar Auditoría de Daniela
+                            </button>
+
+                            <!-- Audit Output Container -->
+                            <div id="audit-result" class="hidden mt-4 p-4 rounded-xl text-xs space-y-2 animate-fade-in">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contacto y Formulario -->
+    <section id="contacto" class="py-20 bg-blush relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-rose-600 font-semibold text-sm tracking-widest uppercase">Oportunidades Laborales</span>
+                        <h2 class="font-serif text-3xl font-bold text-navy-900 mt-1">Pongámonos en Contacto</h2>
+                        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                            Estoy disponible para incorporarme a equipos médicos, clínicas ambulatorias, hospitales o centros de facturación. ¡Hablemos de cómo aportar a su facturación!
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-rose-100 shadow-xs">
+                            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-medium block">Correo Electrónico</span>
+                                <a href="mailto:daniela.melendez.billing@gmail.com" class="text-sm font-semibold text-navy-900 hover:text-rose-600 transition-colors">
+                                    daniela.melendez.billing@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-rose-100 shadow-xs">
+                            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-medium block">Teléfono / WhatsApp</span>
+                                <a href="tel:+17875550199" class="text-sm font-semibold text-navy-900 hover:text-rose-600 transition-colors">
+                                    +1 (787) 555-0199
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-rose-100 shadow-xs">
+                            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-medium block">LinkedIn Profesional</span>
+                                <a href="#" class="text-sm font-semibold text-navy-900 hover:text-rose-600 transition-colors">
+                                    linkedin.com/in/daniela-melendez-medicalbilling
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Right -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-rose-100 shadow-lg">
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-6">Enviar Mensaje Directo</h3>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Nombre Completo</label>
+                                    <input type="text" required placeholder="Ej. Dr. Carlos Rivera" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Organización / Clínica</label>
+                                    <input type="text" placeholder="Ej. Centro Médico San José" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Correo Electrónico</label>
+                                    <input type="email" required placeholder="carlos@clinicamediterraneo.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Asunto</label>
+                                    <input type="text" required placeholder="Propuesta Entrevista / Vacante" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Mensaje</label>
+                                <textarea rows="4" required placeholder="Estimada Daniela, nos gustaría agendar una entrevista..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none text-sm transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-navy-800 hover:bg-rose-600 text-white font-medium text-sm transition-all shadow-md">
+                                Enviar Mensaje
+                            </button>
+
+                            <!-- Success Banner -->
+                            <div id="form-success" class="hidden p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium text-center">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> ¡Mensaje enviado con éxito! Daniela responderá a la brevedad posible.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-rose-200">Daniela A. Meléndez</h4>
+                    <p class="text-xs text-slate-400 mt-1">Especialista en Facturación Médica & Codificación Clínica</p>
+                </div>
+                <p class="text-xs text-slate-500">
+                    &copy; 2026 Daniela A. Meléndez. Portafolio Profesional Académico.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl border border-rose-100 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Dynamically filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Skill Filters
+        function filterSkills(category) {
+            const buttons = document.querySelectorAll('.skill-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-navy-800', 'text-white');
+                btn.classList.add('bg-rose-50', 'text-slate-600');
+            });
+            event.currentTarget.classList.remove('bg-rose-50', 'text-slate-600');
+            event.currentTarget.classList.add('bg-navy-800', 'text-white');
+
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Audit Tool Data & Logic
+        let activeCaseId = 1;
+        const auditCases = {
+            1: {
+                id: 'CLM-2026-101',
+                payer: 'Triple-S Salud / Medicare Advantage',
+                icd: 'M54.50 (Dolor de espalda baja no especificado)',
+                cpt: '99214 (Consulta E/M) + 17000 (Destrucción de lesión)',
+                mod: 'Sin modificador (Error)',
+                issue: 'Falta Modificador 25 en CPT 99214',
+                solution: 'Agregar Modificador -25 al código 99214 para indicar un servicio de Evaluación y Manejo significativo e identificable por separado en el mismo día del procedimiento.',
+                status: 'DENEGACIÓN PROBABLE'
+            },
+            2: {
+                id: 'CLM-2026-102',
+                payer: 'MCS Life / Plan Privado',
+                icd: 'E11.9 (Diabetes Mellitus Tipo 2 sin complicaciones)',
+                cpt: '99213 (Consulta de seguimiento)',
+                mod: 'N/A',
+                issue: 'Código ICD-10 requiere mayor especificidad para la manifestación del paciente.',
+                solution: 'Revisar expediente clínico para codificar hallazgo específico o complicación renal/neurológica si aplica.',
+                status: 'REVISIÓN DE EXPEDIENTE'
+            },
+            3: {
+                id: 'CLM-2026-103',
+                payer: 'First Medical / Reforma de Salud',
+                icd: 'M54.5 (Lumbago)',
+                cpt: '72148 (Resonancia Magnética de Columna Lumbar)',
+                mod: 'N/A',
+                issue: 'Falta Número de Pre-Autorización del Plan Médico.',
+                solution: 'Adjuntar número de Prior Authorization obtenido previo a la toma del estudio radiológico para evitar rechazo por falta de necesidad médica comprobada.',
+                status: 'FALTA AUTORIZACIÓN'
+            }
+        };
+
+        function selectAuditCase(caseNum) {
+            activeCaseId = caseNum;
+            document.querySelectorAll('.audit-case-card').forEach(c => {
+                c.classList.remove('border-rose-500/40', 'bg-slate-800');
+                c.classList.add('border-slate-700', 'bg-slate-800/30');
+            });
+
+            const activeBtn = document.getElementById(`case-btn-${caseNum}`);
+            activeBtn.classList.remove('border-slate-700', 'bg-slate-800/30');
+            activeBtn.classList.add('border-rose-500/40', 'bg-slate-800');
+
+            const current = auditCases[caseNum];
+            document.getElementById('display-claim-id').innerText = current.id;
+            document.getElementById('display-payer').innerText = current.payer;
+            document.getElementById('display-icd').innerText = current.icd;
+            document.getElementById('display-cpt').innerText = current.cpt;
+            document.getElementById('display-mod').innerText = current.mod;
+
+            document.getElementById('audit-result').classList.add('hidden');
+        }
+
+        function runAudit() {
+            const resultBox = document.getElementById('audit-result');
+            const current = auditCases[activeCaseId];
+
+            resultBox.className = "mt-4 p-4 rounded-xl text-xs space-y-2 bg-rose-950/80 border border-rose-500/50 text-rose-100";
+            resultBox.innerHTML = `
+                <div class="flex items-center justify-between font-bold text-rose-300">
+                    <span><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> AUDITORÍA FINALIZADA: ${current.status}</span>
+                </div>
+                <p><strong class="text-white">Problema Identificado:</strong> ${current.issue}</p>
+                <p><strong class="text-white">Acción Correctiva de Daniela:</strong> ${current.solution}</p>
+            `;
+            resultBox.classList.remove('hidden');
+        }
+
+        // Project Modal Logic
+        const modalData = {
+            project1: {
+                title: "Optimización de Denegaciones en Reclamaciones CMS-1500",
+                badge: "Casos de Auditoría RCM",
+                description: "Proyecto enfocado en la prevención y corrección de reclamos médicos rechazados.",
+                details: [
+                    "Análisis de causas raíz en un lote de 150 reclamos médicos.",
+                    "Identificación de errores frecuentes por uso incorrecto de modificadores 25 y 59.",
+                    "Implementación de lista de verificación pre-envío (Pre-Scrubbing) reduciendo denegaciones teóricas de 18% a un 2.5%."
+                ]
+            },
+            project2: {
+                title: "Protocolo de Verificación Previa & Privacidad HIPAA",
+                badge: "Elegibilidad & Cumplimiento",
+                description: "Creación de un manual operativo de recepción y verificación de cubierta médica.",
+                details: [
+                    "Estandarización de captura de datos demográficos y póliza activa del paciente.",
+                    "Protocolo estricto de manejo de PHI para garantizar cumplimiento con regulaciones HIPAA y HITECH.",
+                    "Guía de solicitud y seguimiento de pre-autorizaciones para procedimientos de diagnóstico especializado."
+                ]
+            },
+            project3: {
+                title: "Proyecto Integrador: Ciclo Completo de Reembolso Médicos (RCM)",
+                badge: "Simulación Profesional Integrada",
+                description: "Simulación integral de facturación desde el encuentro inicial hasta la conciliación final.",
+                details: [
+                    "Codificación completa de encuentros clínicos utilizando fuentes ICD-10-CM y CPT.",
+                    "Procesamiento e ingreso de cargos en software EHR/EMR.",
+                    "Lectura e interpretación de Remesas Electrónicas (ERA) y Explicación de Beneficios (EOB) para posteo de pagos."
+                ]
+            }
+        };
+
+        function openModal(projectId) {
+            const project = modalData[projectId];
+            const modalContent = document.getElementById('modal-content');
+
+            modalContent.innerHTML = `
+                <span class="text-xs font-bold text-rose-600 uppercase tracking-widest">${project.badge}</span>
+                <h3 class="font-serif text-2xl font-bold text-navy-900 mt-1 mb-3">${project.title}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-6">${project.description}</p>
+                
+                <h4 class="text-xs font-bold text-navy-800 uppercase tracking-wider mb-3">Puntos Clave del Proyecto:</h4>
+                <ul class="space-y-2 mb-8">
+                    ${project.details.map(detail => `
+                        <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                            <i class="fa-solid fa-check text-rose-500 mt-1"></i>
+                            <span>${detail}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+
+                <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-navy-800 text-white font-medium text-xs hover:bg-rose-600 transition-colors">
+                    Cerrar Detalle
+                </button>
+            `;
+
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Form Submission Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+            e.target.reset();
+        }
+
+        // Resume Download Simulation
+        function downloadResumeSimulated() {
+            const message = "Iniciando descarga del Resumen Profesional de Daniela A. Meléndez (PDF)...";
+            const notification = document.createElement('div');
+            notification.className = "fixed bottom-6 right-6 z-50 bg-navy-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl text-xs font-medium flex items-center gap-3 border border-rose-400/30";
+            notification.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-rose-400 text-base"></i> ${message}`;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-base"></i> Documento generado exitosamente.`;
+                setTimeout(() => notification.remove(), 3000);
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
